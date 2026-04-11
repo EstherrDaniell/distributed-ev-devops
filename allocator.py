@@ -16,9 +16,9 @@ CORS(app)
 # ── Station Registry ──────────────────────────────────────────────────────────
 # Add or remove stations here. Each entry is a separate process/service.
 STATIONS = [
-    {"id": "station_1", "url": "http://localhost:5001"},
-    {"id": "station_2", "url": "http://localhost:5002"},
-    {"id": "station_3", "url": "http://localhost:5003"},
+    {"id": "station_1", "url": "http://host.docker.internal:5001"},
+    {"id": "station_2", "url": "http://host.docker.internal:5002"},
+    {"id": "station_3", "url": "http://host.docker.internal:5003"},
 ]
 
 TIMEOUT = 2  # seconds to wait before declaring a station offline
@@ -663,4 +663,4 @@ def dashboard():
 if __name__ == "__main__":
     print("🎯 Central Allocator running on http://localhost:5000")
     print("   Open http://localhost:5000 in your browser")
-    app.run(port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000)

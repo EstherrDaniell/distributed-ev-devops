@@ -1,0 +1,11 @@
+- name: Deploy EV Charging System
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Install Python dependencies
+      pip:
+        requirements: requirements.txt
+
+    - name: Run Allocator Service
+      command: python allocator.py
